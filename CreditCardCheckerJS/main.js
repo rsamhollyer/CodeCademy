@@ -25,7 +25,8 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 function validateCred(arr) {
-    if (arr.some(isNaN)) {
+    if (arr.length < 1 || !arr.every(Number.isInteger)) {
+        console.log('Entered if block', arr)
         return false;
     }
     // Start with last digit; hold that value as is
@@ -64,6 +65,8 @@ function findInvalidCards(batch) {
             goodCC.push(batch[k]); //place good CC# in one array
         } else badCC.push(batch[k]); //place bad cc# in 2nd array and returns them
     }
+    console.log("Good CC", goodCC)
+    console.log("Bad CC", badCC)
     return badCC;
 }
 
@@ -94,7 +97,8 @@ function idInvalidCardCompanies(badCC) {
 
 
 
-console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+ console.log(idInvalidCardCompanies(findInvalidCards(batch)));
+
 
 
 

@@ -25,7 +25,7 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 
 function validateCred(arr) {
-    if (arr.length < 1 || !arr.every(Number.isInteger)) {
+    if (arr.length < 13 || !arr.every(Number.isInteger)) {
         console.log('Entered if block', arr)
         return false;
     }
